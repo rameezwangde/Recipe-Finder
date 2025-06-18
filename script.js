@@ -142,3 +142,14 @@ async function handleMealClick(e) {
     errorContainer.classList.remove("hidden");
   }
 }
+
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  const isDark = document.body.classList.contains("dark");
+  themeToggleBtn.innerHTML = isDark
+    ? `<i class="fas fa-sun"></i> Light Mode`
+    : `<i class="fas fa-moon"></i> Dark Mode`;
+});

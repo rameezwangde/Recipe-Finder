@@ -275,11 +275,75 @@ button:hover{
 .hidden {
   display: none;
 }
+/* 🌙 Dark mode override for full visibility */
+
+body.dark {
+  background-color: #121212;
+  color: var(--text-light);
+}
+
+/* Apply dark background + light text to all key areas */
+body.dark .container,
+body.dark .header-text,
+body.dark .meal,
+body.dark #meal-details,
+body.dark input[type="text"],
+body.dark .ingredients-list li,
+body.dark #error-container {
+  background-color: #1e1e1e;
+  color: var(--text-light);
+}
+
+/* Ensure headings and labels are light-colored too */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark .meal-title,
+body.dark .meal-category,
+body.dark .meal-details-title,
+body.dark .meal-details-category span,
+body.dark .meal-details-instructions,
+body.dark .youtube-link,
+body.dark .api-link,
+body.dark .api-link a,
+body.dark #result-heading {
+  color: var(--text-light);
+}
+
+/* Adjust category badges */
+body.dark .meal-category,
+body.dark .meal-details-category span {
+  background-color: #333;
+  color: var(--text-light);
+}
+
+/* Buttons */
+body.dark button {
+  background-color: var(--secondary);
+  color: white;
+}
+
+body.dark button:hover {
+  background-color: #087f4e;
+}
+
+/* Error Message Box */
+body.dark #error-container {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
 
 @media (max-width: 600px) {
-  .search-container {
+  .header-flex {
     flex-direction: column;
+    align-items: flex-start;
   }
+
+  .header-text {
+    margin-left: 0;
+  }
+}
+
 
   button#search-btn {
     width: 100%;
@@ -297,4 +361,82 @@ button:hover{
   .ingredients-list {
     grid-template-columns: 1fr;
   }
+
+body.dark {
+  background-color: #121212;
+  color: var(--text-light);
+}
+
+body.dark .container,
+body.dark input[type="text"],
+body.dark .meal,
+body.dark #meal-details,
+body.dark .ingredients-list li {
+  background-color: #1e1e1e;
+  color: var(--text-light);
+}
+
+body.dark button {
+  background-color: var(--secondary);
+  color: white;
+}
+
+body.dark button:hover {
+  background-color: #087f4e;
+}
+
+body.dark .meal-category,
+body.dark .meal-details-category span {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark .youtube-link {
+  background-color: #bb0000;
+}
+
+body.dark .api-link a {
+  color: var(--secondary);
+}
+
+.theme-toggle {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary);
+  color: white;
+}
+.header-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.header-text {
+  margin-left: 1rem;
 }
